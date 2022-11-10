@@ -26,78 +26,10 @@ import Sliders from "../views/admin/sliders/Sliders.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/login',
+    path: '/',
     name: 'index',
     component: Index,
   },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../layout/MainLayout/MainLayout.vue'),
-  },
-  {
-    path: '/admin',
-    redirect: '/admin/dashboard',
-    component: Admin,
-    children: [
-      {
-        path: '/admin/dashboard',
-        name: 'DashBoard',
-        component: Dashboard,
-      },
-      {
-        path: '/admin/settings',
-        component: Settings,
-      },
-      {
-        path: '/admin/tables',
-        component: Tables,
-      },
-      {
-        path: '/admin/maps',
-        component: Maps,
-      },
-      {
-        path: '/admin/pos',
-        name: 'pos',
-        component: Home,
-      },
-      {
-        path: '/admin/sliders',
-        name: 'sliders',
-        component: Sliders
-      },
-    ],
-  },
-  {
-    path: '/auth',
-    redirect: '/auth/login',
-    component: Auth,
-    children: [
-      {
-        path: '/auth/login',
-        name: 'login',
-        component: Login,
-      },
-      {
-        path: '/auth/register',
-        name: 'register',
-        component: Register,
-      },
-    ],
-  },
-  {
-    path: '/landing',
-    component: Landing,
-  },
-  {
-    path: '/profile',
-    component: Profile,
-  },
-  { path: '/:pathMatch(.*)*', redirect: '/auth/login' },
 ];
 
 export default routes;
